@@ -1,34 +1,45 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, Image, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, StyleSheet, } from "react-native";
+import Button from "./components/Button";
 
-export default function App() {
+export default function Home() {
   return (
-    <SafeAreaView style={styles.container}>
-     <Header style={styles.header}>
-      <Text style={styles.title}>Ativ8</Text>
-      </Header>
-    </SafeAreaView>
-  )
+    <View style={styles.container}>
+      <TextInput style={styles.input} placeholder="Digite algo" />
+      <Text style={styles.textRed}>Sem persistência: Nenhum texto Salvo</Text>
+      <Text style={styles.textGreen}>Texto persistido: Nenhum texto Salvo</Text>
+      <Button />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "pink",
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#000',
-    marginTop: 10,
-    marginBottom: 10,
+    fontSize: 40,
+    marginLeft: 30,
+  },
+  input: {
+    height: 40,
+    width: 300,
+    borderColor: "black",
+    borderWidth: 1,
+    marginTop: 30,
+    padding: 10,
+  },
 
-  }
-})
+  textRed: {
+    color: "red",
+    marginTop: 20,
+    fontSize: 20,
+  },
+  textGreen: {
+    color: "white", 
+    marginTop: 20,
+    fontSize: 20,
+  },
+});
